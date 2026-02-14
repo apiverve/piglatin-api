@@ -12,13 +12,8 @@ public class BasicExample {
         PigLatinAPIClient client = new PigLatinAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Request body
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;text&quot;, &quot;The square wooden crate was packed to be shipped. To have is better than to wait and hope.&quot;);
-        parameters.put(&quot;exclusions&quot;, crate,hope);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
