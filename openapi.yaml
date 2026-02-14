@@ -1,19 +1,78 @@
 openapi: 3.0.4
 info:
   title: Pig Latin
-  description: Pig Latin is a simple tool for encoding Pig Latin. It returns the encoded Pig Latin.
+  description: >-
+    Pig Latin is a simple tool for encoding Pig Latin. It returns the encoded
+    Pig Latin.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
-paths: {}
+  - url: https://api.apiverve.com/
+paths:
+  /v1/piglatin:
+    post:
+      summary: Encode Pig Latin
+      description: >-
+        Pig Latin is a simple tool for encoding Pig Latin. It returns the
+        encoded Pig Latin.
+      operationId: piglatin
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  text: >-
+                    Ethay uaresqay oodenway crate asway ackedpay otay ebay
+                    ippedshay. Otay avehay isyay etterbay anthay otay aitway
+                    andyay hope.
+                  exlcusions:
+                    - crate
+                    - hope
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  description: The text to encode in Pig Latin
+                exclusions:
+                  type: string
+                  description: Words to exclude from encoding
+              required:
+                - text
 components:
   securitySchemes:
     api_key:
@@ -21,4 +80,11 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  text: >-
+    The square wooden crate was packed to be shipped. To have is better than to
+    wait and hope.
+  exclusions:
+    - crate
+    - hope
