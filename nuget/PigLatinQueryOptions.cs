@@ -12,7 +12,6 @@ namespace APIVerve.API.PigLatin
     {
         /// <summary>
         /// The text to encode in Pig Latin
-        /// Example: hello world
         /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; }
