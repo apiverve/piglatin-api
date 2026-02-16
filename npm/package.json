@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/piglatin",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Pig Latin is a simple tool for encoding Pig Latin. It returns the encoded Pig Latin.",
   "main": "index.js",
   "types": "index.d.ts",
