@@ -44,7 +44,10 @@ from apiverve_piglatin.apiClient import PiglatinAPIClient
 # Initialize the client with your APIVerve API key
 api = PiglatinAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.", "exclusions": [ "crate", "hope" ] }
+query = {
+    "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.",
+    "exclusions": ["crate","hope"]
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.", "exclusions": [ "crate", "hope" ] }
+query = {
+    "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.",
+    "exclusions": ["crate","hope"]
+}
 ```
 
 ###### Simple Request
@@ -124,7 +130,10 @@ from apiverve_piglatin.apiClient import PiglatinAPIClient, PiglatinAPIClientErro
 
 api = PiglatinAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.", "exclusions": [ "crate", "hope" ] }
+query = {
+    "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.",
+    "exclusions": ["crate","hope"]
+}
 
 try:
     result = api.execute(query)
@@ -145,7 +154,10 @@ from apiverve_piglatin.apiClient import PiglatinAPIClient, PiglatinAPIClientErro
 
 api = PiglatinAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.", "exclusions": [ "crate", "hope" ] }
+query = {
+    "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.",
+    "exclusions": ["crate","hope"]
+}
 
 try:
     result = api.execute(query)
@@ -179,7 +191,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_piglatin.apiClient import PiglatinAPIClient, PiglatinAPIClientError
 
-query = { "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.", "exclusions": [ "crate", "hope" ] }
+query = {
+    "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.",
+    "exclusions": ["crate","hope"]
+}
 
 # Using context manager ensures proper cleanup
 with PiglatinAPIClient("[YOUR_API_KEY]") as api:
@@ -205,7 +220,10 @@ from apiverve_piglatin.apiClient import PiglatinAPIClient
 # Enable debug mode
 api = PiglatinAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.", "exclusions": [ "crate", "hope" ] }
+query = {
+    "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.",
+    "exclusions": ["crate","hope"]
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -220,8 +238,12 @@ from apiverve_piglatin.apiClient import PiglatinAPIClient
 
 api = PiglatinAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.",
+    "exclusions": ["crate","hope"]
+}
+
 try:
-    query = { "text": "The square wooden crate was packed to be shipped. To have is better than to wait and hope.", "exclusions": [ "crate", "hope" ] }
     result = api.execute(query)
     print(result)
 finally:
