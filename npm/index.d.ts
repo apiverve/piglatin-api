@@ -4,17 +4,29 @@ declare module '@apiverve/piglatin' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface piglatinResponse {
     status: string;
     error: string | null;
     data: PigLatinData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface PigLatinData {
-      text:       string;
-      exlcusions: string[];
+      text:       null | string;
+      exlcusions: (null | string)[];
   }
 
   export default class piglatinWrapper {
