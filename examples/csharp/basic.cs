@@ -20,7 +20,7 @@ namespace APIVerve.Examples
         private static readonly string API_URL = "https://api.apiverve.com/v1/piglatin";
 
         /// <summary>
-        /// Make a GET request to the Pig Latin API
+        /// Make a POST request to the Pig Latin API
         /// </summary>
         static async Task<JsonDocument> CallPigLatinAPI()
         {
@@ -29,7 +29,13 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                var response = await client.GetAsync(API_URL);
+                // Request body
+                var requestBody &#x3D; new { text &#x3D; &quot;The square wooden crate was packed to be shipped. To have is better than to wait and hope.&quot;, exclusions &#x3D; crate,hope };
+
+                var jsonContent = JsonSerializer.Serialize(requestBody);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(API_URL, content);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
