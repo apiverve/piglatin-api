@@ -20,6 +20,6 @@ namespace APIVerve.API.PigLatin
         /// Words to exclude from encoding
         /// </summary>
         [JsonProperty("exclusions")]
-        public string Exclusions { get; set; }
+        public List<string>? Exclusions { get; set; }
     }
 }
