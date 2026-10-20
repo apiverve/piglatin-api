@@ -35,8 +35,8 @@ namespace APIVerve.API.PigLatin
         [JsonProperty("text")]
         public string Text { get; set; }
 
-        [JsonProperty("exlcusions")]
-        public string[] Exlcusions { get; set; }
+        [JsonProperty("exclusions")]
+        public string[] Exclusions { get; set; }
     }
 
     public partial class Premium
