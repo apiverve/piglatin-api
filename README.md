@@ -1,13 +1,13 @@
-# [Pig Latin API](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Pig Latin API](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Pig Latin is a simple tool for encoding Pig Latin. It returns the encoded Pig Latin.
+Pig Latin translates English text into Pig Latin while preserving designated words from transformation. Pass any sentence along with an optional exclusion list to receive the encoded phrase and confirmed skipped terms.
 
 The Pig Latin API provides a simple, reliable way to integrate pig latin functionality into your applications. Built for developers who need production-ready pig latin capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -175,7 +175,7 @@ go get github.com/apiverve/piglatin-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Pig Latin API](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Pig Latin API](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/piglatin](https://docs.apiverve.com/ref/piglatin)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -205,11 +205,32 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Pig Latin API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "text": "Ethay uaresqay oodenway crate asway ackedpay otay ebay ippedshay. Otay avehay isyay etterbay anthay otay aitway andyay hope.",
+    "exclusions": [
+      "crate",
+      "hope"
+    ]
+  }
 }
 ```
 
@@ -217,7 +238,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Pig Latin API](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Pig Latin API](https://apiverve.com/marketplace/piglatin?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

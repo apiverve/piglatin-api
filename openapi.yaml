@@ -2,8 +2,9 @@ openapi: 3.0.4
 info:
   title: Pig Latin
   description: >-
-    Pig Latin is a simple tool for encoding Pig Latin. It returns the encoded
-    Pig Latin.
+    Pig Latin translates English text into Pig Latin while preserving designated
+    words from transformation. Pass any sentence along with an optional
+    exclusion list to receive the encoded phrase and confirmed skipped terms.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +19,7 @@ servers:
 paths:
   /v1/piglatin:
     post:
-      summary: Encode Pig Latin
+      summary: Pig Latin
       description: >-
         Pig Latin is a simple tool for encoding Pig Latin. It returns the
         encoded Pig Latin.
@@ -49,7 +50,7 @@ paths:
                     Ethay uaresqay oodenway crate asway ackedpay otay ebay
                     ippedshay. Otay avehay isyay etterbay anthay otay aitway
                     andyay hope.
-                  exlcusions:
+                  exclusions:
                     - crate
                     - hope
         '401':
