@@ -26,7 +26,7 @@ declare module '@apiverve/piglatin' {
 
   interface PigLatinData {
       text:       null | string;
-      exlcusions: (null | string)[];
+      exclusions: (null | string)[];
   }
 
   export default class piglatinWrapper {
