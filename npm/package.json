@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/piglatin",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Pig Latin translates English text into Pig Latin while preserving designated words from transformation. Pass any sentence along with an optional exclusion list to receive the encoded phrase and confirmed skipped terms.",
   "main": "index.js",
   "types": "index.d.ts",
